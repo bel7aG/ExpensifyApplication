@@ -1,0 +1,24 @@
+.header {
+  background-color: #222;
+  padding: 3rem 5rem;
+  .heading {
+    min-width: 1080px;
+    &-primary {
+      & > * {
+        display: block;
+        text-align: center;
+        text-shadow: 3px 1px 4px rgba(#000, .98);
+      }
+
+      &-main {
+        color: #ffffff;
+      }
+
+      &-sub {
+        color: #ECcCDb;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
