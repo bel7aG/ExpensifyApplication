@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './App';
+import App, { AppRouter } from './App';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import {  addExpense, removeExpense, editExpense } from './actions/expenses';
@@ -38,5 +38,5 @@ const expenseThree = store.dispatch(addExpense({
 
 store.dispatch(setTextFilter('rent'));
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppRouter />, document.getElementById('root'));
 registerServiceWorker();

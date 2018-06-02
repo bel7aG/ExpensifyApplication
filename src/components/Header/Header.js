@@ -1,15 +1,20 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => (
-  <header className="header">
-    <h1 className="heading-primary">
-      <span className="heading-primary-main">
-        bel7aG
-      </span>
-      <span className="heading-primary-sub">
-        Expensify Application
-      </span>
-    </h1>
-  </header>
+  <div>
+    <ul>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="contact">Contact</NavLink>
+      </li>
+      <li>
+        <NavLink to="expenses">Expenses</NavLink>
+      </li>
+    </ul>
+  </div>
 );
+
 export default Header;
