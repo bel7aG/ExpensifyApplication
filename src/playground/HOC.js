@@ -12,4 +12,15 @@ const Info = (props) => (
   </div>
 );
 
-ReactDOM.render(<Info info="There are the Details"/>, document.querySelector('.hoc'));
+const withAdminWarning = (WrappedComponent) => {
+  return (props) => (
+      <div>
+        <p>This is a Private info. Please don't share!</p>
+        <WrappedComponent {...props}/>
+      </div>
+    );
+};
+
+const AdminInfo = withAdminWarning(Info);
+
+ReactDOM.render(<AdminInfo info="There are the Details"/>, document.querySelector('.hoc'));
