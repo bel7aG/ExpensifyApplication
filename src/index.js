@@ -7,6 +7,8 @@ import configureStore from './store/configureStore'
 import {  addExpense, removeExpense, editExpense } from './actions/expenses';
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from './actions/filters';
 import getVisiblExpenses from './selectors/expenses';
+import "./playground/HOC";
+
 
 const store = configureStore();
 const unsubscibe = store.subscribe(() => {
