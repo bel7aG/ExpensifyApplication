@@ -21,7 +21,8 @@ body {
   font-size: 1.6rem; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #666666; }
 
 .btn {
   border: 0;
@@ -36,18 +37,38 @@ input {
   border: 0;
   border-radius: 3px; }
 
+.component {
+  animation-name: a;
+  animation-duration: .4s; }
+
+@keyframes a {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  50% {
+    opacity: .1;
+    transform: translateY(10); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 .header {
-  background-color: #222;
-  padding: 3rem 5rem; }
-  .header .heading {
-    min-width: 1080px; }
-    .header .heading-primary > * {
-      display: block;
-      text-align: center;
-      text-shadow: 3px 1px 4px rgba(0, 0, 0, 0.98); }
-    .header .heading-primary-main {
-      color: #ffffff; }
-    .header .heading-primary-sub {
-      color: #ECcCDb;
-      font-size: 1.8rem;
-      letter-spacing: 1px; }
+  padding: 1rem 3rem; }
+  .header .list-items {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: .1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-column-gap: 30px; }
+    .header .list-items .list-item {
+      flex-basis: 20%;
+      border: 1.4px solid;
+      display: inline;
+      padding: .4rem .5rem;
+      border-radius: 4px;
+      text-align: center; }
+      .header .list-items .list-item:first-child {
+        border-color: rgba(218, 44, 49, 0.77); }
+      .header .list-items .list-item:nth-child(2) {
+        border-color: rgba(43, 163, 240, 0.83); }

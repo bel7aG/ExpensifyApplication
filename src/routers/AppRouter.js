@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 const Home = () => (
-  <div>
+  <div className="component">
     <h1>Home Page</h1>
   </div>
 );
 
 const Contact = () => (
-  <div>
+  <div className="component">
     <h1>Contact Page</h1>
   </div>
 );
 
 const Expenses = () => (
-  <div>
+  <div className="component">
     <h1>Expense Page</h1>
   </div>
 );
@@ -28,7 +28,7 @@ const NotFound = () => (
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div>
+    <div className="container">
       <Header />
       <Switch>
         <Route path="/" component={Home} exact />

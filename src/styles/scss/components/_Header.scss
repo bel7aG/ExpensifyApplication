@@ -1,23 +1,31 @@
 .header {
-  background-color: #222;
-  padding: 3rem 5rem;
-  .heading {
-    min-width: 1080px;
-    &-primary {
-      & > * {
-        display: block;
-        text-align: center;
-        text-shadow: 3px 1px 4px rgba(#000, .98);
-      }
+  padding: 1rem 3rem;
 
-      &-main {
-        color: #ffffff;
-      }
+  .list-items {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: .1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-column-gap: 30px;
+    &:hover {
 
-      &-sub {
-        color: #ECcCDb;
-        font-size: 1.8rem;
-        letter-spacing: 1px;
+    }
+
+    .list-item {
+
+      flex-basis: 20%;
+      border: 1.4px solid;
+      display: inline;
+      padding: .4rem .5rem;
+      border-radius: 4px;
+      text-align: center;
+      &:first-child {
+        border-color: rgba(218, 44, 49, 0.77);
+      }
+      &:nth-child(2) {
+        border-color: rgba(43, 163, 240, 0.83);
+
       }
     }
   }

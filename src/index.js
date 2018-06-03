@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App, { AppRouter } from './App';
+import { AppRouter } from './App';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import {  addExpense, removeExpense, editExpense } from './actions/expenses';
