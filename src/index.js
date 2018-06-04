@@ -17,10 +17,10 @@ const unsubscibe = store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(addExpense({
-  description: 'Coffe',
+  description: 'Coca',
   notes: 'cool one',
   amount: 36,
-  createdAt: 5500
+  createdAt: 2500
 }));
 
 const expenseTwo = store.dispatch(addExpense({
@@ -39,11 +39,17 @@ const expenseThree = store.dispatch(addExpense({
 
 store.dispatch(setTextFilter('rent'));
 
+setTimeout(() => {
+  //after 4 second the setTextFilter change.
+  store.dispatch(setTextFilter('ba3 3 second é store bch tséti new setTextFilter'));
+}, 4000)
+
 const JSX = (
   <Provider store={store}>
     <AppRouter />
   </Provider>
 );
+
 
 ReactDOM.render(JSX, document.getElementById('root'));
 registerServiceWorker();

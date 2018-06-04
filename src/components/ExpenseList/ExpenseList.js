@@ -1,13 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ExpenseList = (props) => (
-  <div>
-    <h1>ExpenseList</h1>
-    <p>my github Page is <span>{props.expenses.length}</span></p>
-  </div>
-);
+const ExpenseList = (props) => {
+    let i = 1;
+    return (
+      <div>
+        <h1>Expense List</h1>
+        <p>Expenses Length <span>{props.expenses.length}</span></p>
+        {props.expenses.map((expense) => (
+          <div>
+            <h4>Expense {i++}</h4>
+            <p>{expense.description}</p>
+            <p>{expense.amount}</p>
+            <p>{expense.createdAt}</p>
+            <br />
+          </div>
+        ))}
+      </div>
+    );
+};
 
-export default connect((state) => ({
-  expenses: state.expenses
-}))(ExpenseList);
+const mapStateToProps = (state) => ({
+  expenses: state.expenses,
+  filters: state.filters
+});
+
+export default connect(mapStateToProps)(ExpenseList);
