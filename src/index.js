@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import { AppRouter } from './App';
+import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import {  addExpense, removeExpense, editExpense } from './actions/expenses';
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from './actions/filters';
 import getVisiblExpenses from './selectors/expenses';
-import "./playground/HOC";
-
 
 const store = configureStore();
 const unsubscibe = store.subscribe(() => {
@@ -40,5 +39,11 @@ const expenseThree = store.dispatch(addExpense({
 
 store.dispatch(setTextFilter('rent'));
 
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+const JSX = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
+
+ReactDOM.render(JSX, document.getElementById('root'));
 registerServiceWorker();

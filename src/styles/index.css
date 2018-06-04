@@ -16,13 +16,11 @@ html {
   box-sizing: border-box; }
 
 body {
-  background-color: #ffffff;
   overflow-x: hidden;
   font-size: 1.6rem; }
 
 a {
-  text-decoration: none;
-  color: #666666; }
+  text-decoration: none; }
 
 .btn {
   border: 0;
@@ -37,11 +35,22 @@ input {
   border: 0;
   border-radius: 3px; }
 
+body {
+  background-color: #222;
+  color: #eeeeee; }
+
 .component {
-  animation-name: a;
+  animation-name: component;
   animation-duration: .4s; }
 
-@keyframes a {
+p > * {
+  color: #ff0a02;
+  font-weight: 200;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-decoration-color: blue; }
+
+@keyframes component {
   0% {
     opacity: 0;
     transform: translateY(30px); }
@@ -62,9 +71,7 @@ input {
     grid-template-columns: repeat(3, 110px);
     grid-column-gap: 30px; }
     .header .list-items .list-item {
-      flex-basis: 20%;
       border: 1.4px solid;
-      display: inline;
       padding: .4rem .5rem;
       border-radius: 4px;
       text-align: center; }
@@ -72,3 +79,10 @@ input {
         border-color: rgba(218, 44, 49, 0.77); }
       .header .list-items .list-item:nth-child(2) {
         border-color: rgba(43, 163, 240, 0.83); }
+      .header .list-items .list-item a {
+        color: #BBBBFF; }
+      .header .list-items .list-item:hover {
+        letter-spacing: 2px;
+        transition: all .16s; }
+        .header .list-items .list-item:hover a {
+          color: #ffffff !important; }

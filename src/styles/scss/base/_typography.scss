@@ -1,19 +1,17 @@
+body {
+  background-color: #222;
+  color: #eeeeee;
+}
+
 .component {
-  animation-name: a;
+  animation-name: component;
   animation-duration: .4s;
 }
 
-@keyframes a {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  50% {
-    opacity: .1;
-    transform: translateY(10);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+p > * {
+  color: #ff0a02;
+  font-weight: 200;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-decoration-color: blue;
 }

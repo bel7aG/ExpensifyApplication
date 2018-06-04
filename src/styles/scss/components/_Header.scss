@@ -8,15 +8,9 @@
     display: grid;
     grid-template-columns: repeat(3, 110px);
     grid-column-gap: 30px;
-    &:hover {
-
-    }
 
     .list-item {
-
-      flex-basis: 20%;
       border: 1.4px solid;
-      display: inline;
       padding: .4rem .5rem;
       border-radius: 4px;
       text-align: center;
@@ -25,7 +19,18 @@
       }
       &:nth-child(2) {
         border-color: rgba(43, 163, 240, 0.83);
+      }
 
+      a {
+        color: #BBBBFF;
+      }
+
+      &:hover {
+        letter-spacing: 2px;
+        transition: all .16s;
+        a {
+          color: #ffffff !important;
+        }
       }
     }
   }
