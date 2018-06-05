@@ -17,7 +17,7 @@ const unsubscibe = store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(addExpense({
-  description: 'Coca',
+  description: 'Coca Cola',
   notes: 'cool one',
   amount: 36,
   createdAt: 2500
@@ -39,10 +39,10 @@ const expenseThree = store.dispatch(addExpense({
 
 store.dispatch(setTextFilter('rent'));
 
-setTimeout(() => {
-  //after 4 second the setTextFilter change.
-  store.dispatch(setTextFilter('ba3 3 second é store bch tséti new setTextFilter'));
-}, 4000)
+// setTimeout(() => {
+//   //after 4 second the setTextFilter change.
+//   store.dispatch(setTextFilter('PC'));
+// }, 4000)
 
 const JSX = (
   <Provider store={store}>
