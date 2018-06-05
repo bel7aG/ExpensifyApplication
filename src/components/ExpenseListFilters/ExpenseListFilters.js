@@ -11,7 +11,6 @@ const ExpenseListFilters = (props) => (
           console.log(event.target.value);
           //should Change the Redux Store right here  USING   dispatch
           props.dispatch(setTextFilter(event.target.value));
-
         }
       }
     />
