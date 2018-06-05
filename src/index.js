@@ -5,8 +5,8 @@ import { AppRouter } from './App';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
-import {  addExpense, removeExpense, editExpense } from './actions/expenses';
-import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from './actions/filters';
+import {  addExpense /*, removeExpense, editExpense*/ } from './actions/expenses';
+// import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from './actions/filters';
 import getVisiblExpenses from './selectors/expenses';
 
 const store = configureStore();
