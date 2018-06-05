@@ -17,32 +17,20 @@ const unsubscibe = store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(addExpense({
-  description: 'Coca Cola',
-  notes: 'cool one',
-  amount: 36,
-  createdAt: 2500
+  description: 'Water Bill',
+  amount: 4999
 }));
 
 const expenseTwo = store.dispatch(addExpense({
-  description: 'PC',
-  notes: 'Asus',
-  amount: 1900,
-  createdAt: 3100
+  description: 'Internet Bill',
+  createdAt: 1000
 }));
 
 const expenseThree = store.dispatch(addExpense({
-  description: 'rent',
+  description: 'Rent',
   notes: 'Clean history renter',
-  amount: 1100,
-  createdAt: 4750
+  amount: 500000
 }));
-
-store.dispatch(setTextFilter('rent'));
-
-// setTimeout(() => {
-//   //after 4 second the setTextFilter change.
-//   store.dispatch(setTextFilter('PC'));
-// }, 4000)
 
 const JSX = (
   <Provider store={store}>
