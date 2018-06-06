@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 export default class ExpenseForm extends Component {
   state = {
     description: '',
-    notes: ''
+    note: '',
+    amount: ''
   };
 
   onDescriptionChange = (event) => {
@@ -11,10 +12,17 @@ export default class ExpenseForm extends Component {
     this.setState(() => ({ description }));
   };
 
-  onNotesChange = (event) => {
-    const notes = event.target.value;
-    this.setState(() => ({ notes }))
+  onNoteChange = (event) => {
+    const note = event.target.value;
+    this.setState(() => ({ note }))
   };
+
+  onAmountChange = (event) => {
+    const amount = event.target.value;
+    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+      this.setState(() => ({ amount }))
+    }
+  }
 
   render() {
     return (
@@ -28,13 +36,15 @@ export default class ExpenseForm extends Component {
             onChange={this.onDescriptionChange}
           />
           <input
-            type="number"
+            type="text"
             placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
             value={this.state.notes}
-            onChange={this.onNotesChange}
+            onChange={this.onNoteChange}
           >
           </textarea>
           <button>Add Expense</button>
