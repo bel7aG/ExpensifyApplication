@@ -10,7 +10,8 @@ export default class ExpenseForm extends Component {
     note: '',
     amount: '',
     createdAt: moment(),
-    calendarFocused: false
+    calendarFocused: false,
+    error: ""
   };
 
   onDescriptionChange = (event) => {
@@ -25,23 +26,41 @@ export default class ExpenseForm extends Component {
 
   onAmountChange = (event) => {
     const amount = event.target.value;
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (amount === "" || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ amount }))
     }
   };
 
   onDateChange = (createdAt) => {
-    this.setState(() => ({ createdAt }))
+    if (createdAt) {
+      this.setState(() => ({ createdAt }));
+    }
   };
 
   onFocusChange = ({ focused }) => {
-    this.setState(() => ({ calendarFocused: focused }))
+    this.setState(() => ({ calendarFocused: focused }));
+  };
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    if (!this.state.description || !this.state.amount) {
+      this.setState(() => ({ error: 'Please Provide Description and amount.' }));
+    } else {
+      this.setState(() => ({ error: '' }));
+      this.props.onSubmit({
+        description: this.state.description,
+        notes: this.state.note,
+        amount: parseFloat(this.state.amount, 10),
+        createdAt: this.state.createdAt.valueOf()
+      });
+    }
   };
 
   render() {
     return (
       <div>
-        <form>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             placeholder="Description"
@@ -66,7 +85,6 @@ export default class ExpenseForm extends Component {
             numberOfMonths={1}
             transitionDuration={350}
             withPortal={true}
-
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
