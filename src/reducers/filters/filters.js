@@ -1,9 +1,8 @@
-// filter Reducer
 const filterReducerDefaultState = {
-    text: '',
-    sortBy: 'date',
-    startDate: undefined,
-    endDate: undefined
+  text: '',
+  sortBy: 'date',
+  startDate: undefined,
+  endDate: undefined
 };
 
 const filterReducer = (state = filterReducerDefaultState, action) => {

@@ -37,19 +37,8 @@ input {
   padding: 1rem; }
 
 body {
-  background-color: #222;
-  color: #eeeeee; }
-
-.component {
-  animation-name: component;
-  animation-duration: .4s; }
-
-p > * {
-  color: #ff0a02;
-  font-weight: 200;
-  font-size: 2rem;
-  text-decoration: underline;
-  text-decoration-color: blue; }
+  background-color: #ffffff;
+  color: #222; }
 
 @keyframes component {
   0% {
@@ -81,9 +70,7 @@ p > * {
       .header .list-items .list-item:nth-child(2) {
         border-color: rgba(43, 163, 240, 0.83); }
       .header .list-items .list-item a {
-        color: #BBBBFF; }
+        color: #1155EE; }
       .header .list-items .list-item:hover {
         letter-spacing: 2px;
         transition: all .16s; }
-        .header .list-items .list-item:hover a {
-          color: #ffffff !important; }

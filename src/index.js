@@ -10,7 +10,7 @@ import {  addExpense /*, removeExpense, editExpense*/ } from './actions/expenses
 import getVisiblExpenses from './selectors/expenses';
 
 const store = configureStore();
-const unsubscibe = store.subscribe(() => {
+const unsubscribe = store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisiblExpenses(state.expenses, state.filters);
   console.log(visibleExpenses);
@@ -37,7 +37,6 @@ const JSX = (
     <AppRouter />
   </Provider>
 );
-
 
 ReactDOM.render(JSX, document.getElementById('root'));
 registerServiceWorker();

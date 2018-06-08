@@ -6,12 +6,14 @@ const ExpenseListFilters = (props) => (
   <div>
     <input
       type="text" value={props.filters.text}
+      autoFocus
       onChange={
         (event) => {
           //should Change the Redux Store right here  USING   dispatch
           props.dispatch(setTextFilter(event.target.value));
         }
       }
+      value={props.filters.text}
     />
     <select onChange={(event) => {
       switch (event.target.value) {
