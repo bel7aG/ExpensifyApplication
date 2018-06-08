@@ -26,8 +26,6 @@ a {
   border: 0;
   border-radius: 4px; }
 
-li,
-ol,
 ul {
   list-style-type: none; }
 
@@ -38,39 +36,4 @@ input {
 
 body {
   background-color: #ffffff;
-  color: #222; }
-
-@keyframes component {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); }
-  50% {
-    opacity: .1;
-    transform: translateY(10); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
-
-.header {
-  padding: 1rem 3rem; }
-  .header .list-items {
-    font-size: 2rem;
-    font-weight: 100;
-    letter-spacing: .1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 110px);
-    grid-column-gap: 30px; }
-    .header .list-items .list-item {
-      border: 1.4px solid;
-      padding: .4rem .5rem;
-      border-radius: 4px;
-      text-align: center; }
-      .header .list-items .list-item:first-child {
-        border-color: rgba(218, 44, 49, 0.77); }
-      .header .list-items .list-item:nth-child(2) {
-        border-color: rgba(43, 163, 240, 0.83); }
-      .header .list-items .list-item a {
-        color: #1155EE; }
-      .header .list-items .list-item:hover {
-        letter-spacing: 2px;
-        transition: all .16s; }
+  color: #111; }
