@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <header className="header">
-    <nav className="nav">
+    <nav className="nav-bar">
       <ul className="list-items">
         <li className="list-item">
           <NavLink to="/">Dashboard</NavLink>

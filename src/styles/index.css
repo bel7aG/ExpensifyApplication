@@ -35,5 +35,55 @@ input {
   padding: 1rem; }
 
 body {
-  background-color: #ffffff;
+  background-color: #6b06d0;
   color: #111; }
+
+.header {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.13);
+  width: 50%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
+  height: 100vh; }
+  .header .nav-bar {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-54%, -50%);
+    width: 30vw;
+    text-align: center; }
+    .header .nav-bar .list-items {
+      border-radius: 22%; }
+      .header .nav-bar .list-items .list-item {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        transition: all .2s; }
+        .header .nav-bar .list-items .list-item:first-child {
+          border-top-left-radius: 22%;
+          border-top-right-radius: 22%; }
+        .header .nav-bar .list-items .list-item:nth-child(2) {
+          height: 150px;
+          border-radius: 0; }
+        .header .nav-bar .list-items .list-item:last-child {
+          border-bottom-left-radius: 22%;
+          border-bottom-right-radius: 22%; }
+        .header .nav-bar .list-items .list-item > * {
+          color: #ffffff;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%); }
+        .header .nav-bar .list-items .list-item:hover {
+          background-color: #fff;
+          letter-spacing: 0px; }
+          .header .nav-bar .list-items .list-item:hover > * {
+            transform: translate(-50%, -50%) skewX(10deg);
+            color: #16769f; }
