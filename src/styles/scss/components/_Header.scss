@@ -19,6 +19,16 @@
         color: rgba(#ffffff, 1) !important;
       }
     }
+
+    + .wrapup {
+      :not(:first-child) {
+        opacity: .37;
+        transition: all .2s;
+        color: transparent;
+        text-shadow: 0 0 .8rem #ffffff;
+        transform: scale(.95);
+      }
+    }
   }
   .nav-bar {
     position: absolute;
@@ -58,13 +68,11 @@
 
           &:hover {
             transform: translate(-50%, -50%) scale(1.4);
-
           }
           &:visited {
             transition: all .031s;
             transform: translate(-50%, -50%) skewY(-5deg) scale(.976);
             color: rgb(153, 238, 177);
-
           }
 
         }
@@ -78,4 +86,5 @@
     }
 
   }
+
 }

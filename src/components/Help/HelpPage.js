@@ -2,6 +2,8 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>Help Page</h1>
+    <h2 className="heading">
+      <span className="heading-main">Help</span>
+    </h2>
   </div>
 );
