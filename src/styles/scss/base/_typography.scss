@@ -1,4 +1,21 @@
 body {
-  background-color: rgb(107, 6, 208);
-  color: #111;
+  background-color: #090909;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  > * {
+    flex: 1;
+  }
+  .wrapup {
+    border-right: .21px solid rgba(#000, .8);
+    padding: 2rem 2.5rem;
+    > * {
+      animation-name: wrapup;
+      animation-duration: .93s;
+      animation-iteration-count: 1;
+    }
+  }
 }

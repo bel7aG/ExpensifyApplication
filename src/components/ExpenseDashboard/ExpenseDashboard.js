@@ -3,7 +3,7 @@ import ExpenseList from '../ExpenseList';
 import ExpenseListFilters from '../ExpenseListFilters';
 
 const ExpenseDashboard = () => (
-  <div>
+  <div className="wrapup-main">
     <ExpenseListFilters />
     <ExpenseList />
   </div>
