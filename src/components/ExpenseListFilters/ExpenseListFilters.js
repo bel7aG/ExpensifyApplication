@@ -5,7 +5,7 @@ import { setTextFilter, sortByDate, sortByAmount } from '../../actions/filters';
 const ExpenseListFilters = (props) => (
   <div>
     <input
-      type="text" value={props.filters.text}
+      type="text"
       autoFocus
       onChange={
         (event) => {

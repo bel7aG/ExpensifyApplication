@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import { AppRouter } from './App';
+import App from './App';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
-import {  addExpense /*, removeExpense, editExpense*/ } from './actions/expenses';
-// import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from './actions/filters';
+import { addExpense } from './actions/expenses';
 import getVisiblExpenses from './selectors/expenses';
 
 const store = configureStore();
@@ -32,9 +31,10 @@ const expenseThree = store.dispatch(addExpense({
   amount: 500000
 }));
 
+
 const JSX = (
   <Provider store={store}>
-    <AppRouter />
+    <App />
   </Provider>
 );
 

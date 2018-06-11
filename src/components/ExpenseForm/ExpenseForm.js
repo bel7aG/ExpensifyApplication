@@ -1,18 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 
-export default class ExpenseForm extends Component {
-  state = {
-    description: '',
-    note: '',
-    amount: '',
-    createdAt: moment(),
-    calendarFocused: false,
-    error: ""
-  };
+export default class ExpenseForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.expense ? props.expense.description : '',
+      note: props.expense ? props.expense.note : '',
+      amount: props.expense ? (props.expense.amount / 100).toString() : '',
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calendarFocused: false,
+      error: ""
+    };
+    console.log(props);
+  }
+
+  componentDidMount(prevProps) {
+  // Typical usage (don't forget to compare props):
+    console.log('okokokokokokokokok');
+  }
 
   onDescriptionChange = (event) => {
     const description = event.target.value;
@@ -49,7 +58,7 @@ export default class ExpenseForm extends Component {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
         description: this.state.description,
-        notes: this.state.note,
+        note: this.state.note,
         amount: parseFloat(this.state.amount, 10),
         createdAt: this.state.createdAt.valueOf()
       });
@@ -92,7 +101,7 @@ export default class ExpenseForm extends Component {
             onChange={this.onNoteChange}
           >
           </textarea>
-          <button>Add Expense</button>
+          <button>{this.props.expense ? 'EditExpense' : 'AddExpense'}</button>
         </form>
       </div>
     );
